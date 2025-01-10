@@ -1,0 +1,36 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --dark-color: #343a40;
+  --light-color: #f8f9fa;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 0 auto;
+  width: min(100%, 800px);
+}
+
+footer {
+  display: flex;
+  flex-flow: column;
+  background-color: var(--dark-color);
+  text-align: center;
+  a {
+    color: var(--light-color);
+  }
+}
