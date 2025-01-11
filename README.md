@@ -1,2 +1,3 @@
 # mikuji
-modern mikuji app
+
+モダンみくじアプリ。

@@ -1,35 +1,55 @@
 <!DOCTYPE html>
-<html lang="Ja">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>みくじ</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="/mikuji.svg" rel="icon" type="image/svg+xml" />
   </head>
   <body>
     <div id="app">
+      <div class="popup" :class="{active: result}">
+        <h2>{{result?.name}}</h2>
+        <p>{{result?.summary}}</p>
+        <button @click="back">もう一回引く</button>
+      </div>
       <header>
         <h1>モダンみくじ</h1>
         <p>洗練されたみくじで人生をソリューションする。</p>
       </header>
       <main>
-        <svg class="mikuji" width="200px" height="400px" viewBox="0,0,200,400">
+        <svg
+          @click="draw"
+          class="mikuji"
+          :class="{completed: result}"
+          width="200px"
+          height="400px"
+          viewBox="0,0,200,400"
+        >
           <rect x="80" y="140" width="40" height="20" />
           <path
             d="M0,150l50,-50H150l50,50h-80q0,-10,-10,-10h-20q-10,0,-10,10z"
             fill="darkred"
           ></path>
-          <rect
-            class="stick"
-            x="90"
-            y="10"
-            width="20"
-            height="200"
-            fill="#ffc18c"
-            stroke="#563232"
-            stroke-width="5"
-          />
+          <g class="stick">
+            <rect
+              width="20"
+              height="200"
+              fill="#ffc18c"
+              stroke="#563232"
+              stroke-width="5"
+            />
+            <text
+              x="20"
+              y="-2"
+              rotate="-90"
+              transform="rotate(90)"
+              font-weight="bold"
+            >
+              {{result?.name}}
+            </text>
+          </g>
           <path
             d="M0,150V350l50,50H150l50,-50V150h-80q0,10,-10,10h-20q-10,0,-10,-10z"
             fill="darkred"
@@ -58,5 +78,6 @@
         </p>
       </footer>
     </div>
+    <script type="module" src="main.js"></script>
   </body>
 </html>

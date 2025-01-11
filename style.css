@@ -53,9 +53,52 @@ footer {
 }
 
 .mikuji {
+  user-select: none;
   cursor: pointer;
   animation: shake 1s infinite;
   .stick {
-    y: 1000;
+    transition: none;
+    transform: translate(90px, 200px);
   }
+}
+
+.mikuji.completed {
+  animation: none;
+  .stick {
+    transition: all 0.5s;
+    transform: translate(90px, 10px);
+  }
+}
+
+.popup {
+  color: var(--light-color);
+  position: fixed;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100dvh;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  background-color: rgba(52, 58, 64, 0.9);
+}
+
+.popup.active {
+  pointer-events: all;
+  opacity: 1;
+  transition: all 0;
+  transition-delay: 1s;
+}
+
+button {
+  background-color: darkred;
+  color: var(--light-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  opacity: 1;
 }
