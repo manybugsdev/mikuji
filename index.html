@@ -11,13 +11,45 @@
     <div id="app">
       <header>
         <h1>モダンみくじ</h1>
-        <p>洗練されたみくじ。</p>
+        <p>洗練されたみくじで人生をソリューションする。</p>
       </header>
       <main>
-        <svg width="200px" height="400px" viewBox="0,0,200,400">
-          <rect x="0" y="0" width="200" height="400" fill="#f0f0f0" />
-          <path d="M0,150V350l50,50H150l50,-50V150"></path>
-          <path d="M0,150V350l50,50H150l50,-50V150"></path>
+        <svg class="mikuji" width="200px" height="400px" viewBox="0,0,200,400">
+          <rect x="80" y="140" width="40" height="20" />
+          <path
+            d="M0,150l50,-50H150l50,50h-80q0,-10,-10,-10h-20q-10,0,-10,10z"
+            fill="darkred"
+          ></path>
+          <rect
+            class="stick"
+            x="90"
+            y="10"
+            width="20"
+            height="200"
+            fill="#ffc18c"
+            stroke="#563232"
+            stroke-width="5"
+          />
+          <path
+            d="M0,150V350l50,50H150l50,-50V150h-80q0,10,-10,10h-20q-10,0,-10,-10z"
+            fill="darkred"
+          ></path>
+          <text
+            x="280"
+            y="-80"
+            rotate="-90"
+            transform="rotate(90)"
+            font-size="40"
+            font-weight="bold"
+            fill="white"
+          >
+            みくじ
+          </text>
+          <path
+            d="M0,150l50,50v200v-200h100v200v-200l50-50"
+            stroke="white"
+            fill="none"
+          />
         </svg>
       </main>
       <footer>
